@@ -1,21 +1,21 @@
 {
-  "name": "goit-js-hw-08",
-  "version": "1.0.0",
+  "name": "goit-js-hw-08-vi",
+  "version": "2.0.0",
   "description": "",
-  "homepage": "https://vokur13.github.io/goit-js-hw-08",
+  "homepage": "https://vokur13.github.io/goit-js-hw-08-vi",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-08/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-08-vi/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vokur13/goit-js-hw-08.git"
+    "url": "git+https://github.com/vokur13/goit-js-hw-08-vi.git"
   },
   "keywords": [],
   "author": "VOLODYMYR_KUROV",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vokur13/goit-js-hw-08/issues"
+    "url": "https://github.com/vokur13/goit-js-hw-08-vi/issues"
   },
   "dependencies": {
     "@vimeo/player": "^2.17.1",
