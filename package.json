@@ -1,15 +1,15 @@
 {
-  "name": "goit-js-hw-08-vi",
+  "name": "goit-js-hw-08",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://vokur13.github.io/goit-js-hw-08-vi",
+  "homepage": "https://vokur13.github.io/goit-js-hw-08",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-08-vi/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-08/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vokur13/goit-js-hw-08-vi.git"
+    "url": "git+https://github.com/vokur13/goit-js-hw-08.git"
   },
   "keywords": [],
   "author": "VOLODYMYR_KUROV",
