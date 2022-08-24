@@ -14,10 +14,35 @@ refs.form.addEventListener('submit', onFormSubmit);
 
 getStorageOutput();
 
+// function onInput(e) {
+//   const key = e.target.name;
+//   const value = e.target.value;
+//   formData[key] = value;
+//   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+// }
+
 function onInput(e) {
-  formData[e.target.name] = e.target.value;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+  const key = e.target.name;
+  const value = e.target.value;
+  if (key === 'email' || key === 'message') {
+    formData.email = refs.email.value;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+    formData.message = refs.textarea.value;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+  }
 }
+
+// function onInput(e) {
+//   const key = e.target.name;
+//   const value = e.target.value;
+
+//   if (!formData.hasOwnProperty([key])) {
+//     formData[key] = value;
+//     return;
+//   }
+//   formData[key] = { ...formData[key], ...value };
+//   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+// }
 
 function getStorageOutput() {
   const savedData = localStorage.getItem(STORAGE_KEY);
