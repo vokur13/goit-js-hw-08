@@ -21,28 +21,63 @@ getStorageOutput();
 //   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 // }
 
-function onInput(e) {
-  const key = e.target.name;
-  const value = e.target.value;
-  if (key === 'email' || key === 'message') {
-    formData.email = refs.email.value;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-    formData.message = refs.textarea.value;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-  }
-}
-
 // function onInput(e) {
 //   const key = e.target.name;
 //   const value = e.target.value;
-
-//   if (!formData.hasOwnProperty([key])) {
-//     formData[key] = value;
-//     return;
+//   if (key === 'email' || key === 'message') {
+//     formData.email = refs.email.value;
+//     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+//     formData.message = refs.textarea.value;
+//     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 //   }
-//   formData[key] = { ...formData[key], ...value };
-//   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 // }
+
+function onInput(e) {
+  const key = e.target.name;
+  const value = e.target.value;
+
+  if (!formData.hasOwnProperty([key])) {
+    formData[key] = value;
+  }
+  formData[key] = formData[key] + value;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+}
+// ---------------------------
+// for (const key in userDeveloper) {
+//   if (userDeveloper.hasOwnProperty(key)) {
+//     const element = userDeveloper[key];
+//     console.log('element', element);
+//   }
+// }
+
+// for (const key in userDeveloper) {
+//   if (userDeveloper.hasOwnProperty(key)) {
+//     console.log('key', key);
+//   }
+// //
+
+//         //Object.keys повертає масив власних ключів
+
+// const keys = Object.keys(userDeveloper);
+// console.log('keys', keys);
+
+// const value = Object.values(userDeveloper);
+// console.log('value', value);
+
+// for (const key of keys) {
+//   console.log(userDeveloper[key]);
+//   console.log(key);
+// }
+
+//         //
+
+//         const name = 'mango';
+//         const email = 'email@mail.com'
+//         const user = { name, email }
+//         console.log(user);
+
+//         //
+// ---------------------------
 
 function getStorageOutput() {
   const savedData = localStorage.getItem(STORAGE_KEY);
