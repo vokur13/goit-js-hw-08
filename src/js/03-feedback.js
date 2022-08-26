@@ -40,16 +40,26 @@ function onInput(e) {
   for (const key in formData) {
     if (!formData.hasOwnProperty(key)) {
       formData[key] = value;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+      return;
     }
   }
-  formData[key] = value;
+  const savedData = localStorage.getItem(STORAGE_KEY);
+  if (savedData) {
+    const parseData = JSON.parse(savedData);
+    parseData[key] = value;
+    formData[key] = { ...parseData };
+    console.log('parseData', parseData);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+    return;
+  }
 
   //   if (!formData.hasOwnProperty([key])) {
   //     formData[key] = value;
 
   //   }
 
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+  return;
 }
 // ---------------------------
 // for (const key in userDeveloper) {
