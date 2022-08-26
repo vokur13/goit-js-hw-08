@@ -36,10 +36,19 @@ function onInput(e) {
   const key = e.target.name;
   const value = e.target.value;
 
-  if (!formData.hasOwnProperty([key])) {
-    formData[key] = value;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+  for (const key in formData) {
+    if (!formData.hasOwnProperty(key)) {
+      formData[key] = value;
+    }
   }
-  formData[key] = formData[key] + value;
+  formData[key] = value;
+
+  //   if (!formData.hasOwnProperty([key])) {
+  //     formData[key] = value;
+
+  //   }
+
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 // ---------------------------
