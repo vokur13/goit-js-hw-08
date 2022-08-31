@@ -47,8 +47,10 @@ function onInput(e) {
   const savedData = localStorage.getItem(STORAGE_KEY);
   if (savedData) {
     const parseData = JSON.parse(savedData);
-    parseData[key] = value;
-    formData[key] = { ...parseData };
+    parseData = { key: value };
+    formData = parseData;
+    //     FormData();
+    formData = { key: value };
     console.log('parseData', parseData);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
     return;
@@ -61,6 +63,14 @@ function onInput(e) {
 
   return;
 }
+
+//
+const formData = new FormData(refs.form);
+formData.forEach((name, value) => {
+  console.log(name);
+  console.log(value);
+});
+console.log(formData);
 // ---------------------------
 // for (const key in userDeveloper) {
 //   if (userDeveloper.hasOwnProperty(key)) {
